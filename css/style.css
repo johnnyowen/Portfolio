@@ -1,0 +1,264 @@
+/* root colors */
+:root {
+    --icy: #8b8bff;
+    --blue: #2c2dff;
+    --dark: #000055;
+    --yellow: #ffff80;
+    --lightgreen: #91fc74;
+    --purple: #bb5fff;
+}
+
+/* global selectors */
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--purple);
+    color: var(--yellow);
+}
+
+/* pads content */
+header, body, footer {
+    padding: 5px;
+    margin: 5px;
+}
+
+/* centers header, navs and footer */
+header, .test, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* sizes header */
+header h1 {
+    font-size: 50px;
+    color: var(--lightgreen);
+}
+
+/* tooltips a happy face  */
+header h1:hover::after {
+    content: " :)";
+    color: var(--yellow);
+}
+
+/* pushes nav to stack */
+header nav {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* gives space to links */
+header nav a {
+    padding: 0px 30px;
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+/* styles links on hover */
+header nav a:hover {
+    padding: 0px 30px;
+    background-color: var(--yellow);
+    border-radius: 7px;
+    color: var(--purple);
+}
+
+/* pushes subtitle right */
+header h2 {
+    font-size: 35px;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--lightgreen);
+}
+
+/* border around selfie */
+header img {
+    margin: 5px;
+    padding: 5px;
+    border: 5px;
+    border-style: solid;
+    border-radius: 50px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* glow around selfie */
+header img:hover {
+    box-shadow: inset 0px 0px 8px
+    rgba(255, 255, 128, 1), 0px 0px 15px
+    rgba(255, 255, 128, 1);
+}
+
+/* styles sub-headers */
+h3 {
+    font-size: 30px;
+    color: var(--blue);
+}
+
+/* container for cards */
+.grid{
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+/* card style */
+.card {
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all 0.1s ease-in;
+}
+
+/* shadow on hover */
+.card:hover {
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+/* pads words in cards */
+.card article {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* card title */
+.card h4{
+    font-size: 20px;
+    margin: 0;
+    color: var(--lightgreen);
+}
+
+/* app info */
+.card p {
+    /* make p grow to fill available space */
+    flex: 1;
+    line-height: 1.4;
+}
+
+/* app designer */
+.card span {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 2em 0 0 0;
+}
+
+/* thumbnail image */
+.card .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* centers contact links */
+main div nav {
+    display: flex;
+    flex-direction: column;
+}
+
+/* spaces links */
+main div nav a {
+    padding: 0px 20px;
+    text-decoration: none;
+}
+
+/* hover styling */
+main div nav a:hover {
+    padding: 0px 20px;
+    background-color: var(--lightgreen);
+    color: var(--purple);
+    border-radius: 7px;
+}
+
+/* centers footer */
+footer {
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}
+
+/* colors footer */
+footer h5 {
+    color: var(--lightgreen);
+}
+
+/* floats flowers after thank you */
+footer h5:hover::after, footer h5:hover::before {
+    content: "💮"
+}
+
+/* tablet screen changes */
+@media screen and (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    * {
+        background-color: var(--icy);
+    }
+    header {
+        display: block;
+    }
+    header h1, header h2{
+        color: var(--dark);
+    }
+    header h1:hover::after {
+        content: " :)";
+        color: var(--yellow);
+    
+    }
+    header nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .item1 {
+        grid-column: 1/ span 2;
+    }
+    .item1 h4 {
+        font-size: 25px;
+    }
+    .test {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    header nav a:hover, main div nav a:hover {
+        background-color: var(--yellow);
+        color: var(--icy);
+    }
+}
+
+/* large screen changes */
+@media screen and (min-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    *{
+        background-color: var(--dark);
+    }
+    header h1, header h2 {
+        color: var(--icy);
+    }
+    header nav a:hover, main div nav a:hover {
+        color: var(--dark);
+    }
+    .card:hover {
+        box-shadow: 0px 0px 10px 10px var(--blue);
+}
