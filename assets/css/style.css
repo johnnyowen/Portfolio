@@ -42,8 +42,9 @@ header h1 {
 
 /* tooltips a happy face after my name */
 header h1:hover::after {
-    content: " :)";
+    content: ":)";
     color: var(--yellow);
+    position: absolute;
 }
 
 /* pushes nav to stack */
